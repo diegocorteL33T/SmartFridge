@@ -16,6 +16,10 @@ export class AppComponent {
   private readonly translate = inject(TranslateService);
   currentLang = 'en';
 
+  constructor() {
+    this.translate.use('en');
+  }
+
   toggleLang(): void {
     this.currentLang = this.currentLang === 'en' ? 'pt' : 'en';
     this.translate.use(this.currentLang);
