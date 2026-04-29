@@ -2,11 +2,12 @@ import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { FoodItem } from '../models/food-item.model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({ providedIn: 'root' })
 export class FoodItemService {
   private readonly http = inject(HttpClient);
-  private readonly api = '/food';
+  private readonly api = `${environment.apiUrl}/food`;
 
   getAll(): Observable<FoodItem[]> {
     return this.http.get<FoodItem[]>(`${this.api}/all`);
