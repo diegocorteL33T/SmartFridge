@@ -1,0 +1,66 @@
+{
+  "NAV": {
+    "MY_FRIDGE": "Minha Geladeira",
+    "RECIPE_AI": "Receita IA"
+  },
+  "DASHBOARD": {
+    "TOTAL_ITEMS": "Total de Itens",
+    "EXPIRING_SOON": "Vencendo em Breve",
+    "CATEGORIES": "Categorias",
+    "LOW_STOCK": "Estoque Baixo",
+    "SECTION_TITLE": "Minha Geladeira",
+    "SEARCH": "Buscar",
+    "SEARCH_PLACEHOLDER": "Nome do item…",
+    "CATEGORY": "Categoria",
+    "ALL": "Todas",
+    "LOADING": "Carregando sua geladeira…",
+    "EMPTY_FRIDGE": "Sua geladeira está vazia!",
+    "NO_MATCH": "Nenhum item corresponde ao filtro.",
+    "EMPTY_HINT": "Adicione seu primeiro alimento para começar.",
+    "ADD_FIRST": "Adicionar Primeiro Item",
+    "ADD_TOOLTIP": "Adicionar Alimento"
+  },
+  "FORM": {
+    "EDIT_ITEM": "Editar Item",
+    "ADD_ITEM": "Adicionar Item",
+    "ITEM_NAME": "Nome do Alimento",
+    "NAME_PLACEHOLDER": "ex: Tomates",
+    "NAME_REQUIRED": "Nome é obrigatório",
+    "NAME_MIN": "Mínimo de 2 caracteres",
+    "QUANTITY": "Quantidade",
+    "REQUIRED": "Obrigatório",
+    "MIN_1": "Mínimo 1",
+    "CATEGORY": "Categoria",
+    "EXPIRATION": "Data de Validade",
+    "EXPIRATION_REQUIRED": "Data de validade é obrigatória",
+    "CANCEL": "Cancelar",
+    "SAVE": "Salvar Alterações",
+    "ADD_TO_FRIDGE": "Adicionar à Geladeira"
+  },
+  "CARD": {
+    "QUANTITY": "Quantidade:",
+    "LOW_STOCK": "Estoque baixo!",
+    "EXPIRES": "Validade:",
+    "EXPIRED": "Vencido",
+    "TODAY": "Hoje!",
+    "DAYS_LEFT": "{{days}}d restantes",
+    "EDIT": "Editar",
+    "DELETE": "Excluir"
+  },
+  "RECIPE": {
+    "TITLE": "Gerador de Receitas com IA",
+    "SUBTITLE": "Deixe o Gemini criar uma receita com o que está na sua geladeira agora.",
+    "YOUR_INGREDIENTS": "Seus Ingredientes",
+    "ITEMS_COUNT_ONE": "1 item",
+    "ITEMS_COUNT_MANY": "{{count}} itens",
+    "NOTHING": "Nenhum alimento cadastrado ainda.",
+    "ADD_ITEMS": "Adicionar Itens",
+    "GENERATING": "Gerando…",
+    "GENERATE": "Gerar Receita",
+    "GENERATED_RECIPE": "Receita Gerada",
+    "COOKING": "O Chef IA está cozinhando…",
+    "WAIT": "Isso pode levar alguns segundos.",
+    "READY": "Pronto para cozinhar?",
+    "HINT": "Clique em Gerar Receita e nosso chef IA criará algo delicioso com o que está na sua geladeira."
+  }
+}

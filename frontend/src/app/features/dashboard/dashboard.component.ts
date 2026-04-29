@@ -14,6 +14,7 @@ import { FoodItemService } from '../../core/services/food-item.service';
 import { FoodItem, CATEGORIES } from '../../core/models/food-item.model';
 import { FoodItemCardComponent } from '../food-items/food-item-card/food-item-card.component';
 import { FoodItemFormComponent } from '../food-items/food-item-form/food-item-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -29,6 +30,7 @@ import { FoodItemFormComponent } from '../food-items/food-item-form/food-item-fo
     MatProgressSpinnerModule,
     MatTooltipModule,
     FoodItemCardComponent,
+    TranslateModule,
   ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss',

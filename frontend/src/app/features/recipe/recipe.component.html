@@ -1,8 +1,8 @@
 <div class="recipe-page">
   <header class="page-header">
     <div>
-      <h1><mat-icon>auto_awesome</mat-icon> AI Recipe Generator</h1>
-      <p>Let Gemini create a recipe from whatever's in your fridge right now.</p>
+      <h1><mat-icon>auto_awesome</mat-icon> {{ 'RECIPE.TITLE' | translate }}</h1>
+      <p>{{ 'RECIPE.SUBTITLE' | translate }}</p>
     </div>
   </header>
 
@@ -10,8 +10,10 @@
     <!-- ── Left panel: ingredients ── -->
     <mat-card class="panel ingredients-panel">
       <mat-card-header>
-        <mat-card-title><mat-icon>kitchen</mat-icon> Your Ingredients</mat-card-title>
-        <mat-card-subtitle>{{ items().length }} item{{ items().length !== 1 ? 's' : '' }}</mat-card-subtitle>
+        <mat-card-title><mat-icon>kitchen</mat-icon> {{ 'RECIPE.YOUR_INGREDIENTS' | translate }}</mat-card-title>
+        <mat-card-subtitle>
+          {{ items().length === 1 ? ('RECIPE.ITEMS_COUNT_ONE' | translate) : ('RECIPE.ITEMS_COUNT_MANY' | translate: {count: items().length}) }}
+        </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content>
@@ -20,9 +22,9 @@
         } @else if (!items().length) {
           <div class="empty-panel">
             <mat-icon>inventory_2</mat-icon>
-            <p>Nothing in your fridge yet.</p>
+            <p>{{ 'RECIPE.NOTHING' | translate }}</p>
             <a mat-stroked-button color="primary" routerLink="/dashboard">
-              <mat-icon>add</mat-icon> Add Items
+              <mat-icon>add</mat-icon> {{ 'RECIPE.ADD_ITEMS' | translate }}
             </a>
           </div>
         } @else {
@@ -55,7 +57,7 @@
           @if (!generating()) {
             <mat-icon>auto_awesome</mat-icon>
           }
-          {{ generating() ? 'Generating…' : 'Generate Recipe' }}
+          {{ (generating() ? 'RECIPE.GENERATING' : 'RECIPE.GENERATE') | translate }}
         </button>
       </mat-card-actions>
     </mat-card>
@@ -63,21 +65,21 @@
     <!-- ── Right panel: recipe ── -->
     <mat-card class="panel recipe-panel">
       <mat-card-header>
-        <mat-card-title><mat-icon>menu_book</mat-icon> Generated Recipe</mat-card-title>
+        <mat-card-title><mat-icon>menu_book</mat-icon> {{ 'RECIPE.GENERATED_RECIPE' | translate }}</mat-card-title>
       </mat-card-header>
 
       <mat-card-content>
         @if (generating()) {
           <div class="placeholder-state">
             <mat-spinner diameter="64" />
-            <h3>Chef AI is cooking…</h3>
-            <p>This may take a few seconds.</p>
+            <h3>{{ 'RECIPE.COOKING' | translate }}</h3>
+            <p>{{ 'RECIPE.WAIT' | translate }}</p>
           </div>
         } @else if (!recipe()) {
           <div class="placeholder-state">
             <mat-icon class="big-icon">restaurant_menu</mat-icon>
-            <h3>Ready to cook?</h3>
-            <p>Hit <strong>Generate Recipe</strong> and our AI chef will create something delicious from your fridge contents.</p>
+            <h3>{{ 'RECIPE.READY' | translate }}</h3>
+            <p>{{ 'RECIPE.HINT' | translate }}</p>
           </div>
         } @else {
           <article class="recipe-body">

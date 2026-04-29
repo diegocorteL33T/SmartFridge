@@ -4,12 +4,16 @@
   <span class="spacer"></span>
   <a mat-button routerLink="/dashboard" routerLinkActive="nav-active">
     <mat-icon>inventory_2</mat-icon>
-    My Fridge
+    {{ 'NAV.MY_FRIDGE' | translate }}
   </a>
   <a mat-button routerLink="/recipe" routerLinkActive="nav-active">
     <mat-icon>auto_awesome</mat-icon>
-    Recipe AI
+    {{ 'NAV.RECIPE_AI' | translate }}
   </a>
+  <button mat-button (click)="toggleLang()" class="lang-btn">
+    <mat-icon>language</mat-icon>
+    {{ currentLang === 'en' ? 'PT' : 'EN' }}
+  </button>
 </mat-toolbar>
 
 <div class="page-content">

@@ -1,0 +1,66 @@
+{
+  "NAV": {
+    "MY_FRIDGE": "My Fridge",
+    "RECIPE_AI": "Recipe AI"
+  },
+  "DASHBOARD": {
+    "TOTAL_ITEMS": "Total Items",
+    "EXPIRING_SOON": "Expiring Soon",
+    "CATEGORIES": "Categories",
+    "LOW_STOCK": "Low Stock",
+    "SECTION_TITLE": "My Fridge",
+    "SEARCH": "Search",
+    "SEARCH_PLACEHOLDER": "Item name…",
+    "CATEGORY": "Category",
+    "ALL": "All",
+    "LOADING": "Loading your fridge…",
+    "EMPTY_FRIDGE": "Your fridge is empty!",
+    "NO_MATCH": "No items match your filter.",
+    "EMPTY_HINT": "Add your first food item to get started.",
+    "ADD_FIRST": "Add First Item",
+    "ADD_TOOLTIP": "Add Food Item"
+  },
+  "FORM": {
+    "EDIT_ITEM": "Edit Item",
+    "ADD_ITEM": "Add Item",
+    "ITEM_NAME": "Item Name",
+    "NAME_PLACEHOLDER": "e.g. Tomatoes",
+    "NAME_REQUIRED": "Name is required",
+    "NAME_MIN": "At least 2 characters required",
+    "QUANTITY": "Quantity",
+    "REQUIRED": "Required",
+    "MIN_1": "Min 1",
+    "CATEGORY": "Category",
+    "EXPIRATION": "Expiration Date",
+    "EXPIRATION_REQUIRED": "Expiration date is required",
+    "CANCEL": "Cancel",
+    "SAVE": "Save Changes",
+    "ADD_TO_FRIDGE": "Add to Fridge"
+  },
+  "CARD": {
+    "QUANTITY": "Quantity:",
+    "LOW_STOCK": "Low stock!",
+    "EXPIRES": "Expires:",
+    "EXPIRED": "Expired",
+    "TODAY": "Today!",
+    "DAYS_LEFT": "{{days}}d left",
+    "EDIT": "Edit",
+    "DELETE": "Delete"
+  },
+  "RECIPE": {
+    "TITLE": "AI Recipe Generator",
+    "SUBTITLE": "Let Gemini create a recipe from whatever's in your fridge right now.",
+    "YOUR_INGREDIENTS": "Your Ingredients",
+    "ITEMS_COUNT_ONE": "1 item",
+    "ITEMS_COUNT_MANY": "{{count}} items",
+    "NOTHING": "Nothing in your fridge yet.",
+    "ADD_ITEMS": "Add Items",
+    "GENERATING": "Generating…",
+    "GENERATE": "Generate Recipe",
+    "GENERATED_RECIPE": "Generated Recipe",
+    "COOKING": "Chef AI is cooking…",
+    "WAIT": "This may take a few seconds.",
+    "READY": "Ready to cook?",
+    "HINT": "Hit Generate Recipe and our AI chef will create something delicious from your fridge contents."
+  }
+}

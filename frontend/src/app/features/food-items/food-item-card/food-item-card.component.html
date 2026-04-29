@@ -16,33 +16,33 @@
   <mat-card-content>
     <div class="detail-row">
       <mat-icon>production_quantity_limits</mat-icon>
-      <span>Quantity: <strong>{{ foodItem.quantity }}</strong></span>
+      <span>{{ 'CARD.QUANTITY' | translate }} <strong>{{ foodItem.quantity }}</strong></span>
       @if (foodItem.quantity <= 2) {
-        <mat-icon class="icon-warn" matTooltip="Low stock!">warning</mat-icon>
+        <mat-icon class="icon-warn" [matTooltip]="'CARD.LOW_STOCK' | translate">warning</mat-icon>
       }
     </div>
 
     <div class="detail-row" [class]="'exp-' + status">
       <mat-icon>calendar_today</mat-icon>
       <span>
-        Expires:
+        {{ 'CARD.EXPIRES' | translate }}
         <strong>{{ foodItem.expiration | date : 'MMM d, y' : 'UTC' }}</strong>
       </span>
       @if (status === 'expired') {
-        <span class="exp-badge expired">Expired</span>
+        <span class="exp-badge expired">{{ 'CARD.EXPIRED' | translate }}</span>
       } @else if (status === 'soon') {
         <span class="exp-badge soon">
-          {{ daysLeft === 0 ? 'Today!' : daysLeft + 'd left' }}
+          {{ daysLeft === 0 ? ('CARD.TODAY' | translate) : ('CARD.DAYS_LEFT' | translate: {days: daysLeft}) }}
         </span>
       }
     </div>
   </mat-card-content>
 
   <mat-card-actions align="end">
-    <button mat-icon-button color="primary" (click)="editItem.emit(foodItem)" matTooltip="Edit">
+    <button mat-icon-button color="primary" (click)="editItem.emit(foodItem)" [matTooltip]="'CARD.EDIT' | translate">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-icon-button color="warn" (click)="deleteItem.emit(foodItem)" matTooltip="Delete">
+    <button mat-icon-button color="warn" (click)="deleteItem.emit(foodItem)" [matTooltip]="'CARD.DELETE' | translate">
       <mat-icon>delete</mat-icon>
     </button>
   </mat-card-actions>

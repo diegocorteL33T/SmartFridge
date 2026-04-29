@@ -10,6 +10,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { FoodItemService } from '../../core/services/food-item.service';
 import { RecipeService } from '../../core/services/recipe.service';
 import { FoodItem, CATEGORY_COLORS } from '../../core/models/food-item.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 type LineType = 'heading' | 'step' | 'bullet' | 'text';
 interface RecipeLine { type: LineType; content: string; number?: string; }
@@ -25,6 +26,7 @@ interface RecipeLine { type: LineType; content: string; number?: string; }
     MatProgressSpinnerModule,
     MatDividerModule,
     MatTooltipModule,
+    TranslateModule,
   ],
   templateUrl: './recipe.component.html',
   styleUrl: './recipe.component.scss',

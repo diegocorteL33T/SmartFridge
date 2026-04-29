@@ -5,11 +5,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { FoodItem, CATEGORY_COLORS, CATEGORY_ICONS } from '../../../core/models/food-item.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-food-item-card',
   standalone: true,
-  imports: [DatePipe, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule],
+  imports: [DatePipe, MatCardModule, MatButtonModule, MatIconModule, MatTooltipModule, TranslateModule],
   templateUrl: './food-item-card.component.html',
   styleUrl: './food-item-card.component.scss',
 })

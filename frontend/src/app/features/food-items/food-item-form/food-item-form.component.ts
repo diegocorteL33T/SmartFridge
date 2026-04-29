@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FoodItemService } from '../../../core/services/food-item.service';
 import { FoodItem, CATEGORIES } from '../../../core/models/food-item.model';
+import { TranslateModule } from '@ngx-translate/core';
 
 export interface FoodItemFormData {
   foodItem: FoodItem | null;
@@ -30,6 +31,7 @@ export interface FoodItemFormData {
     MatDatepickerModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    TranslateModule,
   ],
   templateUrl: './food-item-form.component.html',
   styleUrl: './food-item-form.component.scss',
