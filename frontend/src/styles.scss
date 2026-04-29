@@ -73,8 +73,12 @@ html, body {
   transition: background-color 0.3s ease;
 }
 
-.snack-success .mdc-snackbar__surface { background-color: #2e7d32 !important; }
-.snack-error   .mdc-snackbar__surface { background-color: #c62828 !important; }
+.snack-success .mdc-snackbar__surface { background-color: #2e7d32 !important; color: #fff !important; }
+.snack-error   .mdc-snackbar__surface { background-color: #c62828 !important; color: #fff !important; }
+.snack-success .mat-mdc-snack-bar-label,
+.snack-error   .mat-mdc-snack-bar-label { color: #fff !important; }
+.snack-success .mat-mdc-button,
+.snack-error   .mat-mdc-button { color: #fff !important; }
 
 ::-webkit-scrollbar       { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
