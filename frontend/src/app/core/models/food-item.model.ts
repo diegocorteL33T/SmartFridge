@@ -39,7 +39,7 @@ export const CATEGORY_ICONS: Record<string, string> = {
   Meat: 'set_meal',
   Seafood: 'set_meal',
   Vegetables: 'eco',
-  Fruits: 'nutrition',
+  Fruits: 'apple',
   Grains: 'grain',
   Beverages: 'local_drink',
   Condiments: 'restaurant',
