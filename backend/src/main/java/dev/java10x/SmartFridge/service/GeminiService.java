@@ -21,7 +21,7 @@ public class GeminiService {
         this.webClient = webClient;
     }
 
-    public Mono<String> generateRecipe(List<FoodItem> foodItems) {
+    public Mono<String> generateRecipe(List<FoodItem> foodItems, String lang) {
         String ingredients = foodItems.stream()
                 .map(i -> String.format("%s - Quantity: %d, expirationDate: %s",
                 i.getName(),
@@ -29,7 +29,7 @@ public class GeminiService {
                 i.getExpiration()))
                 .collect(Collectors.joining("\n"));
 
-        Map<String, Object> requestBody = getStringObjectMap(ingredients);
+        Map<String, Object> requestBody = getStringObjectMap(ingredients, lang);
 
         return webClient.post()
                 .bodyValue(requestBody)
@@ -45,17 +45,23 @@ public class GeminiService {
                 .map(r -> r.candidates().getFirst().content().parts().getFirst().text());
     }
 
-    private static @NonNull Map<String, Object> getStringObjectMap(String ingredients) {
+    private static @NonNull Map<String, Object> getStringObjectMap(String ingredients, String lang) {
+        String languageInstruction = "pt".equals(lang)
+                ? "Responda em português do Brasil."
+                : "Respond in English.";
+
         String prompt = """
     You are a professional chef. Create a detailed recipe using ONLY the following ingredients:
     %s
-    
+
     Respond with:
     - Recipe name
     - Prep and cook time
     - Step-by-step instructions
     - Any important cooking tips
-    """.formatted(ingredients);
+
+    %s
+    """.formatted(ingredients, languageInstruction);
 
         // Create body
         return Map.of(
