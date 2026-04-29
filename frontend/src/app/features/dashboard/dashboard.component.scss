@@ -19,13 +19,13 @@
 
       &:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,.12); }
 
-      &.blue  { border-top-color: #1976d2; }
+      &.blue   { border-top-color: #1976d2; }
       &.orange { border-top-color: #fb8c00; }
       &.green  { border-top-color: #43a047; }
       &.red    { border-top-color: #e53935; }
 
-      &.lit.orange { background: linear-gradient(135deg, #fff3e0 0%, #fff 100%); }
-      &.lit.red    { background: linear-gradient(135deg, #ffebee 0%, #fff 100%); }
+      &.lit.orange { background: var(--grad-warn-card); }
+      &.lit.red    { background: var(--grad-danger-card); }
 
       mat-card-content {
         display: flex;
@@ -41,19 +41,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
-
         mat-icon { font-size: 26px; width: 26px; height: 26px; }
       }
 
       .stat-body {
-        .stat-num { font-size: 2rem; font-weight: 700; line-height: 1; color: #222; }
-        .stat-lbl { font-size: 0.82rem; color: #777; margin-top: 3px; }
+        .stat-num { font-size: 2rem; font-weight: 700; line-height: 1; color: var(--text-primary); }
+        .stat-lbl { font-size: 0.82rem; color: var(--text-muted); margin-top: 3px; }
       }
 
-      &.blue  .stat-icon { background: rgba(25,118,210,.1);  mat-icon { color: #1976d2; } }
-      &.orange .stat-icon { background: rgba(251,140,0,.12); mat-icon { color: #fb8c00; } }
-      &.green  .stat-icon { background: rgba(67,160,71,.1);  mat-icon { color: #43a047; } }
-      &.red    .stat-icon { background: rgba(229,57,53,.1);  mat-icon { color: #e53935; } }
+      &.blue   .stat-icon { background: rgba(25,118,210,.1);  mat-icon { color: #1976d2; } }
+      &.orange .stat-icon { background: rgba(251,140,0,.12);  mat-icon { color: #fb8c00; } }
+      &.green  .stat-icon { background: rgba(67,160,71,.1);   mat-icon { color: #43a047; } }
+      &.red    .stat-icon { background: rgba(229,57,53,.1);   mat-icon { color: #e53935; } }
     }
   }
 
@@ -72,7 +71,7 @@
       gap: 8px;
       font-size: 1.35rem;
       font-weight: 500;
-      color: #1a237e;
+      color: var(--accent-title);
       margin: 0;
     }
 
@@ -96,11 +95,11 @@
     padding: 72px 20px;
     text-align: center;
     gap: 12px;
-    color: #666;
+    color: var(--text-secondary);
 
-    .empty-icon { font-size: 72px; width: 72px; height: 72px; color: #ccc; }
-    h3 { margin: 0; font-size: 1.4rem; color: #444; }
-    p  { margin: 0; color: #888; }
+    .empty-icon { font-size: 72px; width: 72px; height: 72px; color: var(--icon-empty); }
+    h3 { margin: 0; font-size: 1.4rem; color: var(--text-primary); }
+    p  { margin: 0; color: var(--text-muted); }
   }
 
   /* ── Food grid ── */

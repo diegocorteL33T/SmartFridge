@@ -12,13 +12,13 @@
       gap: 10px;
       font-size: 1.9rem;
       font-weight: 600;
-      color: #1a237e;
+      color: var(--accent-title);
       margin: 0 0 6px;
 
-      mat-icon { font-size: 2rem; width: 2rem; height: 2rem; color: #3949ab; }
+      mat-icon { font-size: 2rem; width: 2rem; height: 2rem; color: var(--accent-icon); }
     }
 
-    p { margin: 0; color: #666; font-size: 1rem; }
+    p { margin: 0; color: var(--text-secondary); font-size: 1rem; }
   }
 
   .two-col {
@@ -59,9 +59,9 @@
       gap: 10px;
       padding: 24px;
       text-align: center;
-      color: #999;
+      color: var(--text-muted);
 
-      mat-icon { font-size: 52px; width: 52px; height: 52px; color: #ddd; }
+      mat-icon { font-size: 52px; width: 52px; height: 52px; color: var(--icon-empty); }
       p { margin: 0; }
     }
 
@@ -77,7 +77,7 @@
         align-items: center;
         gap: 8px;
         padding: 7px 0;
-        border-bottom: 1px solid #f0f0f0;
+        border-bottom: 1px solid var(--border-subtle);
 
         &:last-child { border-bottom: none; }
 
@@ -88,8 +88,8 @@
           flex-shrink: 0;
         }
 
-        .ing-name { flex: 1; font-weight: 500; color: #333; font-size: 0.9rem; }
-        .ing-qty  { color: #888; font-size: 0.82rem; }
+        .ing-name { flex: 1; font-weight: 500; color: var(--text-primary); font-size: 0.9rem; }
+        .ing-qty  { color: var(--text-muted); font-size: 0.82rem; }
         .ing-cat  { font-size: 0.75rem; font-weight: 500; }
       }
     }
@@ -122,9 +122,9 @@
       text-align: center;
       gap: 14px;
 
-      .big-icon { font-size: 68px; width: 68px; height: 68px; color: #c5cae9; }
-      h3 { margin: 0; color: #424242; font-size: 1.3rem; }
-      p  { margin: 0; color: #777; max-width: 380px; line-height: 1.6; }
+      .big-icon { font-size: 68px; width: 68px; height: 68px; color: var(--icon-empty); }
+      h3 { margin: 0; color: var(--text-primary); font-size: 1.3rem; }
+      p  { margin: 0; color: var(--text-secondary); max-width: 380px; line-height: 1.6; }
     }
 
     .recipe-body {
@@ -132,10 +132,10 @@
 
       .r-heading {
         font-size: 1.1rem;
-        color: #1a237e;
+        color: var(--accent-title);
         margin: 22px 0 10px;
         padding-bottom: 6px;
-        border-bottom: 2px solid #e8eaf6;
+        border-bottom: 2px solid var(--border-heading);
 
         &:first-child { margin-top: 0; }
       }
@@ -171,7 +171,7 @@
         mat-icon { font-size: 9px; width: 9px; height: 9px; color: #5c6bc0; margin-top: 7px; flex-shrink: 0; }
       }
 
-      .r-text { color: #424242; margin: 6px 0; }
+      .r-text { color: var(--text-primary); margin: 6px 0; }
     }
   }
 }

@@ -10,6 +10,9 @@
     <mat-icon>auto_awesome</mat-icon>
     {{ 'NAV.RECIPE_AI' | translate }}
   </a>
+  <button mat-icon-button (click)="theme.toggle()" [title]="theme.isDark() ? 'Light mode' : 'Dark mode'">
+    <mat-icon>{{ theme.isDark() ? 'light_mode' : 'dark_mode' }}</mat-icon>
+  </button>
   <button mat-button (click)="toggleLang()" class="lang-btn">
     <mat-icon>language</mat-icon>
     {{ currentLang === 'en' ? 'EN' : 'PT' }}

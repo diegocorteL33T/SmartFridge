@@ -10,12 +10,12 @@
 
   &.status-soon {
     border-left-color: #fb8c00;
-    background: linear-gradient(120deg, #fff8e1 0%, #fff 45%);
+    background: var(--grad-warn);
   }
 
   &.status-expired {
     border-left-color: #e53935;
-    background: linear-gradient(120deg, #ffebee 0%, #fff 45%);
+    background: var(--grad-danger);
     opacity: 0.82;
   }
 
@@ -74,21 +74,19 @@
       gap: 6px;
       padding: 3px 0;
       font-size: 0.88rem;
-      color: #555;
+      color: var(--text-secondary);
 
       mat-icon {
         font-size: 17px;
         width: 17px;
         height: 17px;
-        color: #9e9e9e;
+        color: var(--icon-muted);
       }
 
-      .icon-warn {
-        color: #fb8c00;
-      }
+      .icon-warn { color: #fb8c00; }
 
       &.exp-expired { color: #c62828; }
-      &.exp-soon { color: #e65100; }
+      &.exp-soon    { color: #e65100; }
     }
   }
 
@@ -101,6 +99,6 @@
     color: white;
 
     &.expired { background: #e53935; }
-    &.soon { background: #fb8c00; }
+    &.soon    { background: #fb8c00; }
   }
 }

@@ -1,21 +1,82 @@
-html,
-body {
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$light-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+  ),
+  typography: (brand-family: 'Roboto, Helvetica Neue, sans-serif'),
+));
+
+$dark-theme: mat.define-theme((
+  color: (
+    theme-type: dark,
+    primary: mat.$azure-palette,
+  ),
+  typography: (brand-family: 'Roboto, Helvetica Neue, sans-serif'),
+));
+
+html {
+  @include mat.all-component-themes($light-theme);
+}
+
+body.dark-mode {
+  @include mat.all-component-colors($dark-theme);
+}
+
+/* ── CSS variables ── */
+:root {
+  --bg-page:            #f0f4f8;
+  --text-primary:       #222;
+  --text-secondary:     #666;
+  --text-muted:         #888;
+  --accent-title:       #1a237e;
+  --accent-icon:        #3949ab;
+  --border-subtle:      #f0f0f0;
+  --border-heading:     #e8eaf6;
+  --icon-muted:         #9e9e9e;
+  --icon-empty:         #ccc;
+  --grad-warn:          linear-gradient(120deg, #fff8e1 0%, #fff 45%);
+  --grad-danger:        linear-gradient(120deg, #ffebee 0%, #fff 45%);
+  --grad-warn-card:     linear-gradient(135deg, #fff3e0 0%, #fff 100%);
+  --grad-danger-card:   linear-gradient(135deg, #ffebee 0%, #fff 100%);
+  --scrollbar-track:    #f1f1f1;
+  --scrollbar-thumb:    #bbb;
+}
+
+body.dark-mode {
+  --bg-page:            #121212;
+  --text-primary:       #e0e0e0;
+  --text-secondary:     #aaa;
+  --text-muted:         #666;
+  --accent-title:       #90caf9;
+  --accent-icon:        #7986cb;
+  --border-subtle:      #2a2a2a;
+  --border-heading:     #1a237e55;
+  --icon-muted:         #555;
+  --icon-empty:         #444;
+  --grad-warn:          linear-gradient(120deg, #3e2a00 0%, #1e1e1e 45%);
+  --grad-danger:        linear-gradient(120deg, #3e0000 0%, #1e1e1e 45%);
+  --grad-warn-card:     linear-gradient(135deg, #3e2a00 0%, #1e1e1e 100%);
+  --grad-danger-card:   linear-gradient(135deg, #3e0000 0%, #1e1e1e 100%);
+  --scrollbar-track:    #1e1e1e;
+  --scrollbar-thumb:    #444;
+}
+
+html, body {
   height: 100%;
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
-  background-color: #f0f4f8;
+  background-color: var(--bg-page);
+  transition: background-color 0.3s ease;
 }
 
-.snack-success .mdc-snackbar__surface {
-  background-color: #2e7d32 !important;
-}
+.snack-success .mdc-snackbar__surface { background-color: #2e7d32 !important; }
+.snack-error   .mdc-snackbar__surface { background-color: #c62828 !important; }
 
-.snack-error .mdc-snackbar__surface {
-  background-color: #c62828 !important;
-}
-
-/* scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #bbb; border-radius: 3px; }
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #999; }
