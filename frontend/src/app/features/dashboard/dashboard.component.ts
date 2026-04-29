@@ -94,7 +94,7 @@ export class DashboardComponent implements OnInit {
   remove(item: FoodItem): void {
     if (!item.id) return;
     this.svc.delete(item.id).subscribe({
-      next: () => { this.items.update((arr) => arr.filter((i) => i.id !== item.id)); this.toast(`${item.name} removed`); },
+      next: () => { this.items.update((arr) => arr.filter((i) => i.id !== item.id)); this.toast(`${item.name} removed`, true); },
       error: () => this.toast('Delete failed', true),
     });
   }
