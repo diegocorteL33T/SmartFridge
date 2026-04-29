@@ -34,7 +34,7 @@
                 <span class="cat-dot" [style.background]="color(item.category)"></span>
                 <span class="ing-name">{{ item.name }}</span>
                 <span class="ing-qty">× {{ item.quantity }}</span>
-                <span class="ing-cat" [style.color]="color(item.category)">{{ item.category }}</span>
+                <span class="ing-cat" [style.color]="color(item.category)">{{ 'CATEGORIES.' + item.category | translate }}</span>
               </li>
             }
           </ul>

@@ -7,7 +7,7 @@
       <mat-card-title>{{ foodItem.name }}</mat-card-title>
       <mat-card-subtitle>
         <span class="cat-badge" [style.background-color]="categoryColor">
-          {{ foodItem.category }}
+          {{ 'CATEGORIES.' + foodItem.category | translate }}
         </span>
       </mat-card-subtitle>
     </div>

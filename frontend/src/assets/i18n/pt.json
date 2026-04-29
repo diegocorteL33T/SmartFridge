@@ -47,6 +47,19 @@
     "EDIT": "Editar",
     "DELETE": "Excluir"
   },
+  "CATEGORIES": {
+    "Dairy": "Laticínios",
+    "Meat": "Carnes",
+    "Seafood": "Frutos do Mar",
+    "Vegetables": "Vegetais",
+    "Fruits": "Frutas",
+    "Grains": "Grãos",
+    "Beverages": "Bebidas",
+    "Condiments": "Condimentos",
+    "Snacks": "Lanches",
+    "Frozen Foods": "Congelados",
+    "Other": "Outros"
+  },
   "RECIPE": {
     "TITLE": "Gerador de Receitas com IA",
     "SUBTITLE": "Deixe o Gemini criar uma receita com o que está na sua geladeira agora.",

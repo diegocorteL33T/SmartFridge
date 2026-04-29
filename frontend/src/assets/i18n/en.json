@@ -47,6 +47,19 @@
     "EDIT": "Edit",
     "DELETE": "Delete"
   },
+  "CATEGORIES": {
+    "Dairy": "Dairy",
+    "Meat": "Meat",
+    "Seafood": "Seafood",
+    "Vegetables": "Vegetables",
+    "Fruits": "Fruits",
+    "Grains": "Grains",
+    "Beverages": "Beverages",
+    "Condiments": "Condiments",
+    "Snacks": "Snacks",
+    "Frozen Foods": "Frozen Foods",
+    "Other": "Other"
+  },
   "RECIPE": {
     "TITLE": "AI Recipe Generator",
     "SUBTITLE": "Let Gemini create a recipe from whatever's in your fridge right now.",

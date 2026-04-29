@@ -34,7 +34,7 @@
         <mat-label>{{ 'FORM.CATEGORY' | translate }}</mat-label>
         <mat-select formControlName="category">
           @for (cat of categories; track cat) {
-            <mat-option [value]="cat">{{ cat }}</mat-option>
+            <mat-option [value]="cat">{{ 'CATEGORIES.' + cat | translate }}</mat-option>
           }
         </mat-select>
         <mat-icon matSuffix>category</mat-icon>

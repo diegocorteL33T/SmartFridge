@@ -60,7 +60,7 @@
         <mat-select [(ngModel)]="filterCat">
           <mat-option value="">{{ 'DASHBOARD.ALL' | translate }}</mat-option>
           @for (c of categories; track c) {
-            <mat-option [value]="c">{{ c }}</mat-option>
+            <mat-option [value]="c">{{ 'CATEGORIES.' + c | translate }}</mat-option>
           }
         </mat-select>
       </mat-form-field>
