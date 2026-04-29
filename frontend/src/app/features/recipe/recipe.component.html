@@ -1,0 +1,106 @@
+<div class="recipe-page">
+  <header class="page-header">
+    <div>
+      <h1><mat-icon>auto_awesome</mat-icon> AI Recipe Generator</h1>
+      <p>Let Gemini create a recipe from whatever's in your fridge right now.</p>
+    </div>
+  </header>
+
+  <div class="two-col">
+    <!-- ── Left panel: ingredients ── -->
+    <mat-card class="panel ingredients-panel">
+      <mat-card-header>
+        <mat-card-title><mat-icon>kitchen</mat-icon> Your Ingredients</mat-card-title>
+        <mat-card-subtitle>{{ items().length }} item{{ items().length !== 1 ? 's' : '' }}</mat-card-subtitle>
+      </mat-card-header>
+
+      <mat-card-content>
+        @if (loadingItems()) {
+          <div class="spinner-wrap"><mat-spinner diameter="40" /></div>
+        } @else if (!items().length) {
+          <div class="empty-panel">
+            <mat-icon>inventory_2</mat-icon>
+            <p>Nothing in your fridge yet.</p>
+            <a mat-stroked-button color="primary" routerLink="/dashboard">
+              <mat-icon>add</mat-icon> Add Items
+            </a>
+          </div>
+        } @else {
+          <ul class="ing-list">
+            @for (item of items(); track item.id) {
+              <li class="ing-row">
+                <span class="cat-dot" [style.background]="color(item.category)"></span>
+                <span class="ing-name">{{ item.name }}</span>
+                <span class="ing-qty">× {{ item.quantity }}</span>
+                <span class="ing-cat" [style.color]="color(item.category)">{{ item.category }}</span>
+              </li>
+            }
+          </ul>
+        }
+      </mat-card-content>
+
+      <mat-divider />
+
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="primary"
+          class="gen-btn"
+          (click)="generate()"
+          [disabled]="generating() || !items().length"
+        >
+          @if (generating()) {
+            <mat-spinner diameter="18" />
+          }
+          @if (!generating()) {
+            <mat-icon>auto_awesome</mat-icon>
+          }
+          {{ generating() ? 'Generating…' : 'Generate Recipe' }}
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+    <!-- ── Right panel: recipe ── -->
+    <mat-card class="panel recipe-panel">
+      <mat-card-header>
+        <mat-card-title><mat-icon>menu_book</mat-icon> Generated Recipe</mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content>
+        @if (generating()) {
+          <div class="placeholder-state">
+            <mat-spinner diameter="64" />
+            <h3>Chef AI is cooking…</h3>
+            <p>This may take a few seconds.</p>
+          </div>
+        } @else if (!recipe()) {
+          <div class="placeholder-state">
+            <mat-icon class="big-icon">restaurant_menu</mat-icon>
+            <h3>Ready to cook?</h3>
+            <p>Hit <strong>Generate Recipe</strong> and our AI chef will create something delicious from your fridge contents.</p>
+          </div>
+        } @else {
+          <article class="recipe-body">
+            @for (line of lines; track $index) {
+              @if (line.type === 'heading') {
+                <h3 class="r-heading">{{ line.content }}</h3>
+              } @else if (line.type === 'step') {
+                <div class="r-step">
+                  <span class="step-num">{{ line.number }}</span>
+                  <span>{{ line.content }}</span>
+                </div>
+              } @else if (line.type === 'bullet') {
+                <div class="r-bullet">
+                  <mat-icon>fiber_manual_record</mat-icon>
+                  <span>{{ line.content }}</span>
+                </div>
+              } @else {
+                <p class="r-text">{{ line.content }}</p>
+              }
+            }
+          </article>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  gap: 4px;
+
+  .logo-icon {
+    font-size: 28px;
+    width: 28px;
+    height: 28px;
+    margin-right: 6px;
+  }
+
+  .app-title {
+    font-size: 1.35rem;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  a[mat-button] {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 4px;
+    border-radius: 6px;
+    opacity: 0.88;
+    transition: opacity 0.2s, background 0.2s;
+
+    &.nav-active,
+    &:hover {
+      opacity: 1;
+      background-color: rgba(255, 255, 255, 0.18);
+    }
+  }
+}
+
+.page-content {
+  min-height: calc(100vh - 64px);
+}

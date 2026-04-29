@@ -1,0 +1,117 @@
+<div class="dashboard">
+  <!-- Stat Cards -->
+  <div class="stats-grid">
+    <mat-card class="stat-card blue">
+      <mat-card-content>
+        <div class="stat-icon"><mat-icon>inventory_2</mat-icon></div>
+        <div class="stat-body">
+          <div class="stat-num">{{ totalItems }}</div>
+          <div class="stat-lbl">Total Items</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card orange" [class.lit]="expiringSoon > 0">
+      <mat-card-content>
+        <div class="stat-icon"><mat-icon>schedule</mat-icon></div>
+        <div class="stat-body">
+          <div class="stat-num">{{ expiringSoon }}</div>
+          <div class="stat-lbl">Expiring Soon</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card green">
+      <mat-card-content>
+        <div class="stat-icon"><mat-icon>category</mat-icon></div>
+        <div class="stat-body">
+          <div class="stat-num">{{ categoryCount }}</div>
+          <div class="stat-lbl">Categories</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card class="stat-card red" [class.lit]="lowStock > 0">
+      <mat-card-content>
+        <div class="stat-icon"><mat-icon>warning</mat-icon></div>
+        <div class="stat-body">
+          <div class="stat-num">{{ lowStock }}</div>
+          <div class="stat-lbl">Low Stock</div>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Toolbar Row -->
+  <div class="toolbar-row">
+    <h2 class="section-title">
+      <mat-icon>kitchen</mat-icon>
+      My Fridge
+    </h2>
+    <div class="filters">
+      <mat-form-field appearance="outline" class="search-box">
+        <mat-label>Search</mat-label>
+        <input matInput [(ngModel)]="search" placeholder="Item name…" />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="cat-box">
+        <mat-label>Category</mat-label>
+        <mat-select [(ngModel)]="filterCat">
+          <mat-option value="">All</mat-option>
+          @for (c of categories; track c) {
+            <mat-option [value]="c">{{ c }}</mat-option>
+          }
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+
+  <!-- Loading -->
+  @if (loading()) {
+    <div class="center-state">
+      <mat-spinner diameter="56" />
+      <p>Loading your fridge…</p>
+    </div>
+  }
+
+  <!-- Empty -->
+  @if (!loading() && filtered.length === 0) {
+    <div class="center-state">
+      <mat-icon class="empty-icon">kitchen</mat-icon>
+      <h3>{{ items().length === 0 ? 'Your fridge is empty!' : 'No items match your filter.' }}</h3>
+      @if (items().length === 0) {
+        <p>Add your first food item to get started.</p>
+        <button mat-raised-button color="primary" (click)="openAdd()">
+          <mat-icon>add</mat-icon>
+          Add First Item
+        </button>
+      }
+    </div>
+  }
+
+  <!-- Grid -->
+  @if (!loading() && filtered.length > 0) {
+    <div class="food-grid">
+      @for (item of filtered; track item.id) {
+        <app-food-item-card
+          [foodItem]="item"
+          (editItem)="openEdit($event)"
+          (deleteItem)="remove($event)"
+        />
+      }
+    </div>
+  }
+
+  <!-- FAB -->
+  <button
+    mat-fab
+    color="primary"
+    class="fab"
+    (click)="openAdd()"
+    matTooltip="Add Food Item"
+    matTooltipPosition="left"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

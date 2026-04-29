@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="toolbar">
+  <mat-icon class="logo-icon">kitchen</mat-icon>
+  <span class="app-title">SmartFridge</span>
+  <span class="spacer"></span>
+  <a mat-button routerLink="/dashboard" routerLinkActive="nav-active">
+    <mat-icon>inventory_2</mat-icon>
+    My Fridge
+  </a>
+  <a mat-button routerLink="/recipe" routerLinkActive="nav-active">
+    <mat-icon>auto_awesome</mat-icon>
+    Recipe AI
+  </a>
+</mat-toolbar>
+
+<div class="page-content">
+  <router-outlet />
+</div>
