@@ -206,5 +206,5 @@ Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
 ---
 
 <div align="center">
-  Feito com ❤️ por <a href="https://github.com/diegocorte1771">Diego Corte</a>
+  Feito com ❤️ por <a href="https://github.com/diegocorteL33T">Diego Corte</a>
 </div>
