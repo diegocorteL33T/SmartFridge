@@ -2,7 +2,7 @@
 
 # 🧊 SmartFridge
 
-### Gerencie sua geladeira e gere receitas com Inteligência Artificial
+### Manage your fridge and generate AI-powered recipes
 
 [![Angular](https://img.shields.io/badge/Angular-18-DD0031?style=for-the-badge&logo=angular&logoColor=white)](https://angular.io/)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
@@ -10,92 +10,92 @@
 [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[Demo ao Vivo](https://smart-fridge-lac.vercel.app/dashboard) · [Reportar Bug](https://github.com/diegocorteL33T/SmartFridge/issues) · [Solicitar Feature](https://github.com/diegocorteL33T/SmartFridge/issues)
+[Live Demo](https://smart-fridge-lac.vercel.app/dashboard) · [Report Bug](https://github.com/diegocorteL33T/SmartFridge/issues) · [Request Feature](https://github.com/diegocorteL33T/SmartFridge/issues)
 
 </div>
 
 ---
 
-## 📋 Sobre o Projeto
+## 📋 About the Project
 
-O **SmartFridge** é uma aplicação full-stack que transforma a gestão da sua geladeira em uma experiência inteligente. Cadastre alimentos, acompanhe validades e quantidade em estoque, e deixe a IA gerar receitas personalizadas com os ingredientes que você já tem em casa.
+**SmartFridge** is a full-stack web application that turns fridge management into a smart experience. Add your food items, track expiration dates and stock levels, and let AI generate personalized recipes using the ingredients you already have at home.
 
-### ✨ Funcionalidades
+### ✨ Features
 
-- **📦 Gestão de Inventário** — Adicione, edite e remova alimentos com nome, quantidade, categoria e data de validade
-- **⚠️ Alertas de Validade** — Indicadores visuais para itens vencidos, prestes a vencer (3 dias) e em estoque baixo
-- **🤖 Receitas com IA** — Geração automática de receitas pelo Google Gemini com base nos seus ingredientes atuais
-- **🌍 Multilíngue** — Interface completa em Português (BR) e Inglês
-- **🌙 Tema Escuro/Claro** — Toggle de tema com persistência via localStorage
-- **📊 Dashboard** — Painel com métricas: total de itens, a vencer, categorias e estoque baixo
+- **📦 Inventory Management** — Add, edit, and remove food items with name, quantity, category, and expiration date
+- **⚠️ Expiration Alerts** — Visual indicators for expired, expiring soon (3 days), and low stock items
+- **🤖 AI Recipe Generation** — Automatic recipe creation via Google Gemini based on your current ingredients
+- **🌍 Multilingual** — Full interface support for English and Brazilian Portuguese
+- **🌙 Dark / Light Theme** — Theme toggle with localStorage persistence
+- **📊 Dashboard** — Overview panel with key metrics: total items, expiring soon, categories, and low stock
 
 ---
 
-## 🛠️ Tecnologias
+## 🛠️ Tech Stack
 
 ### Frontend
-| Tecnologia | Versão | Uso |
+| Technology | Version | Purpose |
 |---|---|---|
-| Angular | 18 | Framework principal |
-| Angular Material | 18 | Componentes de UI |
-| ngx-translate | 17 | Internacionalização (i18n) |
-| TypeScript | 5.5 | Linguagem |
-| RxJS | 7.8 | Programação reativa |
+| Angular | 18 | Main framework |
+| Angular Material | 18 | UI components |
+| ngx-translate | 17 | Internationalization (i18n) |
+| TypeScript | 5.5 | Language |
+| RxJS | 7.8 | Reactive programming |
 
 ### Backend
-| Tecnologia | Versão | Uso |
+| Technology | Version | Purpose |
 |---|---|---|
-| Spring Boot | 3.5 | Framework principal |
-| Spring WebFlux | — | Chamadas HTTP reativas ao Gemini |
-| Spring Data JPA | — | Persistência de dados |
-| Flyway | — | Migrações de banco de dados |
-| H2 Database | — | Banco de dados embarcado |
-| Lombok | — | Redução de boilerplate |
-| Google Gemini AI | 2.5 Flash Lite | Geração de receitas |
+| Spring Boot | 3.5 | Main framework |
+| Spring WebFlux | — | Reactive HTTP calls to Gemini |
+| Spring Data JPA | — | Data persistence |
+| Flyway | — | Database migrations |
+| H2 Database | — | Embedded database |
+| Lombok | — | Boilerplate reduction |
+| Google Gemini AI | 2.5 Flash Lite | Recipe generation |
 
 ---
 
-## 🚀 Como Rodar Localmente
+## 🚀 Running Locally
 
-### Pré-requisitos
+### Prerequisites
 
 - [Node.js](https://nodejs.org/) 18+
 - [Java](https://www.java.com/) 17+
 - [Maven](https://maven.apache.org/) 3.8+
-- Chave de API do [Google Gemini](https://aistudio.google.com/app/apikey)
+- [Google Gemini](https://aistudio.google.com/app/apikey) API key
 
-### 1. Clone o repositório
+### 1. Clone the repository
 
 ```bash
-git clone https://github.com/diegocorte1771/SmartFridge.git
+git clone https://github.com/diegocorteL33T/SmartFridge.git
 cd SmartFridge
 ```
 
-### 2. Configure o Backend
+### 2. Set up the Backend
 
 ```bash
 cd backend
 ```
 
-Defina a variável de ambiente com sua chave do Gemini:
+Set the environment variable with your Gemini API key:
 
 ```bash
 # Linux / macOS
-export GEMINI_API_KEY=sua_chave_aqui
+export GEMINI_API_KEY=your_key_here
 
 # Windows (PowerShell)
-$env:GEMINI_API_KEY="sua_chave_aqui"
+$env:GEMINI_API_KEY="your_key_here"
 ```
 
-Inicie o servidor:
+Start the server:
 
 ```bash
 ./mvnw spring-boot:run
 ```
 
-O backend estará disponível em `http://localhost:8080`.
+The backend will be available at `http://localhost:8080`.
 
-### 3. Configure o Frontend
+### 3. Set up the Frontend
 
 ```bash
 cd frontend
@@ -103,41 +103,41 @@ npm install
 npm start
 ```
 
-A aplicação estará disponível em `http://localhost:4200`.
+The application will be available at `http://localhost:4200`.
 
-> O proxy de desenvolvimento encaminha automaticamente as chamadas de `/food` e `/recipe` para o backend em `localhost:8080`.
-
----
-
-## 📡 Endpoints da API
-
-### Alimentos (`/food`)
-
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `GET` | `/food/all` | Lista todos os alimentos |
-| `GET` | `/food/{id}` | Busca um alimento por ID |
-| `POST` | `/food/add` | Cadastra um novo alimento |
-| `PATCH` | `/food/update/{id}` | Atualiza parcialmente um alimento |
-| `DELETE` | `/food/delete/{id}` | Remove um alimento |
-
-### Receitas (`/recipe`)
-
-| Método | Rota | Descrição |
-|--------|------|-----------|
-| `GET` | `/recipe/generate?lang=pt` | Gera receita com os itens da geladeira |
-
-**Parâmetro `lang`:** `pt` para Português, `en` para Inglês.
+> The development proxy automatically forwards `/food` and `/recipe` calls to the backend at `localhost:8080`.
 
 ---
 
-## 📂 Estrutura do Projeto
+## 📡 API Endpoints
+
+### Food Items (`/food`)
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/food/all` | List all food items |
+| `GET` | `/food/{id}` | Get a food item by ID |
+| `POST` | `/food/add` | Create a new food item |
+| `PATCH` | `/food/update/{id}` | Partially update a food item |
+| `DELETE` | `/food/delete/{id}` | Delete a food item |
+
+### Recipes (`/recipe`)
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| `GET` | `/recipe/generate?lang=en` | Generate a recipe from current fridge items |
+
+**`lang` parameter:** `pt` for Portuguese, `en` for English.
+
+---
+
+## 📂 Project Structure
 
 ```
 SmartFridge/
 ├── backend/
 │   └── src/main/java/dev/java10x/SmartFridge/
-│       ├── config/          # CORS e WebClient
+│       ├── config/          # CORS and WebClient config
 │       ├── controller/      # FoodItemController, RecipeController
 │       ├── exception/       # ResourceNotFoundException
 │       ├── model/           # FoodItem entity, DTOs
@@ -147,64 +147,64 @@ SmartFridge/
 └── frontend/
     └── src/app/
         ├── core/
-        │   ├── models/      # FoodItem interface + categorias
+        │   ├── models/      # FoodItem interface + categories
         │   └── services/    # food-item, recipe, theme services
         ├── features/
-        │   ├── dashboard/   # Inventário principal
-        │   ├── food-item-card/   # Card individual do alimento
-        │   ├── food-item-form/   # Modal de criação/edição
-        │   └── recipe/      # Gerador de receitas com IA
+        │   ├── dashboard/        # Main inventory view
+        │   ├── food-item-card/   # Individual item card
+        │   ├── food-item-form/   # Add/edit modal form
+        │   └── recipe/           # AI recipe generator
         └── assets/i18n/     # en.json, pt.json
 ```
 
 ---
 
-## 🗂️ Categorias de Alimentos
+## 🗂️ Food Categories
 
-O sistema suporta 11 categorias, cada uma com ícone e cor distintos:
+The system supports 11 categories, each with a distinct icon and color:
 
-| Categoria | Ícone | Cor |
-|-----------|-------|-----|
-| Dairy | 🥛 | Azul |
-| Meat | 🥩 | Vermelho |
-| Seafood | 🐟 | Ciano |
-| Vegetables | 🥦 | Verde |
-| Fruits | 🍎 | Rosa |
-| Grains | 🌾 | Âmbar |
-| Beverages | 🥤 | Roxo |
-| Condiments | 🧂 | Laranja |
-| Snacks | 🍿 | Amarelo |
-| Frozen Foods | ❄️ | Azul claro |
-| Other | 📦 | Cinza |
+| Category | Icon | Color |
+|----------|------|-------|
+| Dairy | 🥛 | Blue |
+| Meat | 🥩 | Red |
+| Seafood | 🐟 | Cyan |
+| Vegetables | 🥦 | Green |
+| Fruits | 🍎 | Pink |
+| Grains | 🌾 | Amber |
+| Beverages | 🥤 | Purple |
+| Condiments | 🧂 | Orange |
+| Snacks | 🍿 | Yellow |
+| Frozen Foods | ❄️ | Light Blue |
+| Other | 📦 | Gray |
 
 ---
 
-## 🌍 Internacionalização
+## 🌍 Internationalization
 
-A aplicação está disponível em dois idiomas com troca dinâmica na navbar:
+The app is available in two languages with dynamic switching in the navbar:
 
-- 🇧🇷 **Português (Brasil)**
 - 🇺🇸 **English**
+- 🇧🇷 **Portuguese (Brazil)**
 
-Os arquivos de tradução estão em `frontend/src/assets/i18n/`. O idioma selecionado também é enviado ao backend para que as receitas geradas pelo Gemini respondam no idioma correto.
+Translation files are located at `frontend/src/assets/i18n/`. The selected language is also sent to the backend so that Gemini responds with recipes in the correct language.
 
 ---
 
 ## ☁️ Deploy
 
-O projeto está configurado para deploy na plataforma [Railway](https://railway.app/):
+The project is configured for deployment on [Railway](https://railway.app/):
 
 - **Backend:** `https://smartfridge-production-a852.up.railway.app`
-- **Variável obrigatória:** `GEMINI_API_KEY`
+- **Required variable:** `GEMINI_API_KEY`
 
 ---
 
-## 📄 Licença
+## 📄 License
 
-Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ---
 
 <div align="center">
-  Feito com ❤️ por <a href="https://github.com/diegocorteL33T">Diego Corte</a>
+  Made with ❤️ by <a href="https://github.com/diegocorteL33T">Diego Corte</a>
 </div>
