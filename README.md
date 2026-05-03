@@ -10,7 +10,7 @@
 [![Java](https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)](https://www.java.com/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 
-[Demo ao Vivo](https://smart-fridge-lac.vercel.app/dashboard) · [Reportar Bug](https://github.com/diegocorte1771/SmartFridge/issues) · [Solicitar Feature](https://github.com/diegocorte1771/SmartFridge/issues)
+[Demo ao Vivo](https://smart-fridge-lac.vercel.app/dashboard) · [Reportar Bug](https://github.com/diegocorteL33T/SmartFridge/issues) · [Solicitar Feature](https://github.com/diegocorteL33T/SmartFridge/issues)
 
 </div>
 
